@@ -10,6 +10,7 @@ export const CreateChoiceSchema = z.object({
 export const UpdateChoiceSchema = z.object({
   id: z.number(),
   questionId: z.undefined(),
+  text: z.string().optional(),
   // template: __fieldName__: z.__zodType__(),
 })
 

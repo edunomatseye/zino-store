@@ -19,7 +19,7 @@ const NewQuestionPage = () => {
         <QuestionForm
           submitText="Create Question"
           schema={CreateQuestionSchema}
-          // initialValues={{}}
+          initialValues={{ text: "", choices: [] }}
           onSubmit={async (values) => {
             try {
               const question = await createQuestionMutation(values)
