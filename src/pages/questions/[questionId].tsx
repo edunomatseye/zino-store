@@ -36,7 +36,7 @@ export const Question = () => {
 
       <div>
         <h1>Question {question.text}</h1>
-        {/* <pre>{JSON.stringify(question, null, 2)}</pre> */}
+        <pre>{JSON.stringify(question, null, 2)}</pre>
 
         <ul>
           {question.choices.map((choice) => (
