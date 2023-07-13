@@ -1,4 +1,4 @@
-import { Suspense } from "react"
+import { Suspense, memo } from "react"
 import { Routes } from "@blitzjs/next"
 import Head from "next/head"
 import Link from "next/link"
@@ -9,7 +9,7 @@ import getQuestions from "src/questions/queries/getQuestions"
 
 const ITEMS_PER_PAGE = 100
 
-export const QuestionsList = () => {
+export const QuestionsList = memo(() => {
   const router = useRouter()
   const page = Number(router.query.page) || 0
   const [{ questions, hasMore }] = usePaginatedQuery(getQuestions, {
@@ -46,7 +46,7 @@ export const QuestionsList = () => {
       </button>
     </div>
   )
-}
+})
 
 const QuestionsPage = () => {
   return (
